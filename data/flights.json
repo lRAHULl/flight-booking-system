@@ -1,0 +1,16 @@
+[
+    {
+    "id": 1,
+    "source": "SF",
+    "destination": "chennai",
+    "date": "21-05-2020",
+    "available": 2
+    },
+    {
+        "id": 2,
+        "source": "SF",
+        "destination": "mumbai",
+        "date": "21-05-2020",
+        "available": 2
+    }
+]

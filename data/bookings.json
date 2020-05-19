@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "bookingId": "a@b.com-1-21-05-2020",
+        "flight": {
+            "id": 1,
+            "source": "SF",
+            "destination": "chennai",
+            "date": "21-05-2020",
+            "available": 2
+        },
+        "email": "a@b.com",
+        "isActive": false
+    }
+]
