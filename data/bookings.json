@@ -1,15 +1,54 @@
 [
     {
         "id": 1,
-        "bookingId": "a@b.com-1-21-05-2020",
+        "bookingId": "rahul.p@coda.global-2-21-05-2020",
+        "flight": {
+            "id": 2,
+            "source": "SF",
+            "destination": "mumbai",
+            "date": "21-05-2020",
+            "available": 1
+        },
+        "email": "rahul.p@coda.global",
+        "isActive": false
+    },
+    {
+        "id": 2,
+        "bookingId": "rahul.p@coda.global-1-21-05-2020",
         "flight": {
             "id": 1,
             "source": "SF",
             "destination": "chennai",
-            "date": "21-05-2020",
-            "available": 2
+            "date": "20-05-2020",
+            "available": 1
         },
-        "email": "a@b.com",
+        "email": "rahul.p@coda.global",
+        "isActive": true
+    },
+    {
+        "id": 3,
+        "bookingId": "rahulpadmaraju16@gmail.com-2-21-05-2020",
+        "flight": {
+            "id": 2,
+            "source": "SF",
+            "destination": "mumbai",
+            "date": "21-05-2020",
+            "available": 1
+        },
+        "email": "rahulpadmaraju16@gmail.com",
+        "isActive": false
+    },
+    {
+        "id": 4,
+        "bookingId": "rahul.p@coda.global-2-21-05-2020",
+        "flight": {
+            "id": 2,
+            "source": "SF",
+            "destination": "mumbai",
+            "date": "21-05-2020",
+            "available": 1
+        },
+        "email": "rahul.p@coda.global",
         "isActive": false
     }
 ]
