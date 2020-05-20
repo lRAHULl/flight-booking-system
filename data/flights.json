@@ -3,14 +3,35 @@
         "id": 1,
         "source": "SF",
         "destination": "chennai",
-        "date": "21-05-2020",
+        "date": "19-05-2020",
         "available": 1
     },
     {
         "id": 2,
         "source": "SF",
         "destination": "mumbai",
+        "date": "22-05-2020",
+        "available": 3
+    },
+    {
+        "id": 3,
+        "source": "London",
+        "destination": "Paris",
+        "date": "28-05-2020",
+        "available": 7
+    },
+    {
+        "id": 4,
+        "source": "Tokyo",
+        "destination": "miyagi",
         "date": "21-05-2020",
         "available": 0
+    },
+    {
+        "id": 5,
+        "source": "mexico city",
+        "destination": "sao paulo",
+        "date": "21-05-2020",
+        "available": 14
     }
 ]

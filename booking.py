@@ -38,18 +38,6 @@ class BookingSystem:
             self.flights = out['data']
         else:
             print(out['data'])
-
-
-        # if os.path.exists(flightsPath):
-        #     with open(flightsPath) as flightsFile:
-        #         try:
-        #             self.flights = json.load(flightsFile)
-        #         except json.decoder.JSONDecodeError:
-        #             print('JSON error')
-        #         except:
-        #             print('something went wrong!')
-        # else:
-        #     print('No Flight-registry found - No Flights available')
     
     def getFlights(self, source: str, destination: str, display = False):
         """
@@ -63,7 +51,8 @@ class BookingSystem:
 
         availableFlights = dict()
         for flight in self.flights:
-            if flight['source'].lower() == source.lower() and flight['destination'].lower() == destination.lower():
+            # print(flight)
+            if flight["source"].lower() == source.lower() and flight["destination"].lower() == destination.lower() and datetime.strptime(flight["date"], "%d-%m-%Y").date() > datetime.now().date():
                 availableFlights[flight['id']] = flight
 
         if display and availableFlights:
@@ -132,18 +121,6 @@ class BookingSystem:
 
         if out['status'] == 200:
             bookings = out['data']
-        # if os.path.exists(bookingsPath):
-        #     with open(bookingsPath) as bookingsFile:
-        #         try:
-        #             bookings = json.load(bookingsFile)
-        #             if not bookings:
-        #                 bookings = []
-        #         except json.decoder.JSONDecodeError:
-        #             print('JSON error')
-        #         except:
-        #             print('something went wrong!')
-        # else:
-        #     print('No Booking-registry found - No Bookings available')
 
         id = 1
         if bookings:
@@ -162,17 +139,13 @@ class BookingSystem:
 
         for flight in allFlights:
             if flight["id"] == flightId:
+                print(flight)
                 flight["available"] -= 1
 
         
         writeBookings = self.file.writeJsonFile(bookingsPath, bookings)
 
-        writeFlights = self.file.writeJsonFile(flightsPath, allFlights)        
-        # with open(bookingsPath, 'w') as bookingsFile:
-        #     json.dump(bookings, bookingsFile, indent=4)
-
-        # with open(flightsPath, 'w') as flightsFile:
-        #     json.dump(allFlights, flightsFile, indent=4)
+        writeFlights = self.file.writeJsonFile(flightsPath, allFlights)
 
         if writeBookings['status'] == 200 and writeFlights['status'] == 200:
             print('Activating Mail Service')
@@ -196,24 +169,10 @@ class BookingSystem:
         else:
             if not methodCall:
                 print(out['data'])
-        # if os.path.exists(bookingsPath):
-        #     with open(bookingsPath) as bookingsFile:
-        #         try:
-        #             bookings = json.load(bookingsFile)
-        #             if not bookings:
-        #                 bookings = []
-        #         except json.decoder.JSONDecodeError:
-        #             print('JSON error')
-        #         except:
-        #             print('something went wrong!')
-        # else:
-        #     if not methodCall:
-        #         print('No Booking-registry found - No Bookings available')
 
         userBookings = []
         for booking in bookings:
             if booking["email"] == userEmail and booking["isActive"]:
-                # print(booking)
                 userBookings.append(booking)
 
         if not userBookings:
@@ -254,8 +213,6 @@ class BookingSystem:
         bookingsPath = 'data/bookings.json'
         if cancelledBooking:
             writeBookings = self.file.writeJsonFile(bookingsPath, allBookings)
-            # with open(bookingsPath, 'w') as bookingsFile:
-            #     json.dump(allBookings, bookingsFile, indent=4)
             print('Activating Mail Service')
             sendMail(userEmail, cancelledBooking["bookingId"], cancelledBooking["flight"], False)
             print(" -- Flight Cancellation successful -- ")

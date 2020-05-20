@@ -1,54 +1,54 @@
 [
     {
         "id": 1,
-        "bookingId": "rahul.p@coda.global-2-21-05-2020",
+        "bookingId": "rahul.p@coda.global-5-21-05-2020",
+        "flight": {
+            "id": 5,
+            "source": "mexico city",
+            "destination": "sao paulo",
+            "date": "21-05-2020",
+            "available": 15
+        },
+        "email": "rahul.p@coda.global",
+        "isActive": true
+    },
+    {
+        "id": 2,
+        "bookingId": "rahul.p@coda.global-2-22-05-2020",
         "flight": {
             "id": 2,
             "source": "SF",
             "destination": "mumbai",
-            "date": "21-05-2020",
-            "available": 1
-        },
-        "email": "rahul.p@coda.global",
-        "isActive": false
-    },
-    {
-        "id": 2,
-        "bookingId": "rahul.p@coda.global-1-21-05-2020",
-        "flight": {
-            "id": 1,
-            "source": "SF",
-            "destination": "chennai",
-            "date": "20-05-2020",
-            "available": 1
+            "date": "22-05-2020",
+            "available": 4
         },
         "email": "rahul.p@coda.global",
         "isActive": true
     },
     {
         "id": 3,
-        "bookingId": "rahulpadmaraju16@gmail.com-2-21-05-2020",
+        "bookingId": "rahulpadmaraju16@gmail.com-5-21-05-2020",
         "flight": {
-            "id": 2,
-            "source": "SF",
-            "destination": "mumbai",
+            "id": 5,
+            "source": "mexico city",
+            "destination": "sao paulo",
             "date": "21-05-2020",
-            "available": 1
+            "available": 15
         },
         "email": "rahulpadmaraju16@gmail.com",
-        "isActive": false
+        "isActive": true
     },
     {
         "id": 4,
-        "bookingId": "rahul.p@coda.global-2-21-05-2020",
+        "bookingId": "rahulpadmaraju16@gmail.com-2-22-05-2020",
         "flight": {
             "id": 2,
             "source": "SF",
             "destination": "mumbai",
-            "date": "21-05-2020",
-            "available": 1
+            "date": "22-05-2020",
+            "available": 4
         },
-        "email": "rahul.p@coda.global",
-        "isActive": false
+        "email": "rahulpadmaraju16@gmail.com",
+        "isActive": true
     }
 ]

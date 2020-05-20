@@ -2,6 +2,17 @@ import os
 import json
 
 class FileIOUtils:
+    """
+        @author Rahul
+        This Class handles all the `File IO` operations.
+        =============================================
+
+        Methods
+        -------
+        1. ReadJsonFile
+        2. WriteJsonFile
+
+    """
     def readJsonFile(self, filePath):
         out = {}
         if os.path.exists(filePath):

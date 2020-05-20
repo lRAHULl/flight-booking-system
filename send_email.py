@@ -4,6 +4,8 @@ import smtplib
 
 def sendMail(userEmail: str, bookingId: int, flight: dict, flag: bool):
     """
+        @author Rahul
+        
         Send Emails using `smtplib`
     """
     SERVER_EMAIL_ADDRESS = os.environ.get('EMAIL_ADDRESS')

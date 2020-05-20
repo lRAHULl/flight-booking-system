@@ -3,6 +3,17 @@ import json
 from utils import FileIOUtils
 
 class User:
+    """
+        @author Rahul
+        This Class handles all the user operations.
+        ==========================================
+
+        Methods
+        -------
+
+        1. Login
+        2. Signup
+    """
     def __init__(self):
         self.file = FileIOUtils()
     def login(self, email: str, password: str, signupcheck=False):
@@ -17,18 +28,6 @@ class User:
             if not signupcheck:
                 print(out['data'])
             return
-        # if os.path.exists(usersPath):
-        #     with open(usersPath) as usersFile:
-        #         try:
-        #             users = json.load(usersFile)
-        #         except json.decoder.JSONDecodeError:
-        #             print('JSON error')
-        #         except:
-        #             print('something went wrong!')
-        # else:
-        #     if not signupcheck:
-        #         print('No User Found.. Sign Up')
-        #     return
 
         userFound = False
         for user in users:
@@ -60,21 +59,11 @@ class User:
 
         if out['status'] == 200:
             users = out['data']
-        # if os.path.exists(usersPath):
-        #     with open(usersPath) as usersFile:
-        #         try:
-        #             users = json.load(usersFile)
-        #         except json.decoder.JSONDecodeError:
-        #             print('JSON error')
-        #         except:
-        #             print('something went wrong!.. Check and correct the data/users.json file')
 
         users.append(user)
 
         writeUsers = self.file.writeJsonFile(usersPath, users)
 
-        # with open(usersPath, 'w') as usersFile:
-        #     json.dump(users, usersFile, indent=4)
         if writeUsers['status'] == 200:
             print()
             print(" -- Signup Successful -- ")
